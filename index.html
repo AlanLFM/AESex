@@ -15,13 +15,13 @@
         <center>
         <form>
             <input type="radio" name="tipo" value="128" id="uno" onclick="lenghtPassword()"><span id="suno">128</span>
-            <input type="text" placeholder="Password (16)" id="password1" maxlength="16">
+            <input type="text" placeholder="Password (16)" id="password1" maxlength="16" onkeypress="return check(event)">
 
             <input type="radio" name="tipo" value="192" id="dos" onclick= "lenghtPassword()"><span id="sdos">192</span>
-            <input type="text" placeholder="Password (24)" id="password2" maxlength="24">
+            <input type="text" placeholder="Password (24)" id="password2" maxlength="24" onkeypress="return check(event)">
 
             <input type="radio" name="tipo" value="256" id="tres" onclick= "lenghtPassword()"><span id="stres">256</span>
-            <input type="text" placeholder="Password (32)" id="password3" maxlength="32">
+            <input type="text" placeholder="Password (32)" id="password3" maxlength="32" onkeypress="return check(event)">
             
         </form>
         
@@ -36,5 +36,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
     <script src="./js/aes.js" ></script>
+    <script>
+        function check(e)
+         {
+
+    tecla = (document.all) ? e.keyCode : e.which;
+
+    //Tecla de retroceso para borrar, siempre la permite
+    if (tecla == 8) {
+        return true;
+    }
+
+    // Patrón de entrada, en este caso solo acepta numeros y letras
+    patron = /[A-Za-z/ñÑ ]/;
+    tecla_final = String.fromCharCode(tecla);
+    return patron.test(tecla_final);
+    }
+    </script>
 </body>
 </html>

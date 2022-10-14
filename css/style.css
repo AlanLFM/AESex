@@ -6,7 +6,7 @@
   
   body, html {
       font-family: 'Menlo', monospace; 
-      background-color: #eee;
+      background-color: rgb(154, 255, 250);
   }
   
   h1, h2, h3, h4, h5, h6, p, ul, ol {
