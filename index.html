@@ -8,9 +8,11 @@
     <title>AES</title>
 </head>
 <body>
-    <div class="centrar">
-        <p class="aes">Cifrado AES</p>
-
+        <div class="input-text">
+            <p class="message">Cifrado AES&nbsp;<span></span></p>
+        </div>
+        <br>
+        <center>
         <form>
             <input type="radio" name="tipo" value="128" id="uno" onclick="lenghtPassword()"><span id="suno">128</span>
             <input type="text" placeholder="Password (16)" id="password1" maxlength="16">
@@ -23,15 +25,14 @@
             
         </form>
         
-
+    </center>
+    <br>
         <textarea  cols="30" rows="10" id="texto" placeholder="texto"></textarea>
-        <div class="t">
             <input type="button" value="Cifrar" onclick="guardarArchivoCifrado()" id="archivoc">
-
+        
             <a href="./descifrado.html">Descifrar</a>
-        </div>
+        
 
-    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
     <script src="./js/aes.js" ></script>

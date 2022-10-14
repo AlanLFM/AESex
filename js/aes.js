@@ -85,11 +85,11 @@ function descifrar(evento){
     var i=1;
 
     do{
-      var password = document.getElementById("password"+i).value; 
+      var contra = document.getElementById("password"+i).value; 
       i++
-    }while(password==null)
+    }while(contra==null)
     
-    console.log(password)
+    console.log(contra)
 
     //if(archivo2){
       //var reader=new FileReader();
@@ -101,7 +101,7 @@ function descifrar(evento){
         //document.getElementById("mensajedescifrado").innerHTML=contenido;
         //var descifrado2= CryptoJS.AES.decrypt("dsadsad", "1234567812345678")
         //console.log(descifrado2)
-        var descifrado = CryptoJS.AES.decrypt(contenido, password);
+        var descifrado = CryptoJS.AES.decrypt(contenido, contra);
         console.log("Esto es el descifrado: " + descifrado.toString(CryptoJS.enc.Utf8) + "jeje");
         var decifradotxt=descifrado.toString(CryptoJS.enc.Utf8)
         console.log("Esto es el decifrado txt " + decifradotxt)

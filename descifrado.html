@@ -10,10 +10,10 @@
     
 </head>
 <body>
-
-    <div class="centrar">
-        <p class="aes">Descifrado AES</p>
-
+    <div class="input-text">
+        <p class="message">Descifrado AES&nbsp;<span></span></p>
+    </div>
+    <center>
         <form>
             <input type="radio" name="tipo" value="128" id="uno" onclick="lenghtPassword()"><span id="suno">128</span>
             <input type="text" placeholder="Password (16)" id="password1" maxlength="16">
@@ -25,15 +25,16 @@
             <input type="text" placeholder="Password (32)" id="password3" maxlength="32">
             
         </form>
+    </center>
     
+    <input type="file"  id="archivo">
+    <br>
+    <br>
+    <br>
         <textarea  cols="30" rows="10" id="mdescifrado" placeholder="Mensaje descifrado"></textarea>
 
-        <div class="t">
-            <input type="file"  id="archivo">
             <input type="button" value="Descifrar" onclick="descifrar()" id="desc">
             <a href="./index.html">Cifrar</a>
-        </div>
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="./js/aes.js" ></script>
