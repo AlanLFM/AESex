@@ -13,29 +13,31 @@
     <div class="input-text">
         <p class="message">Descifrado AES&nbsp;<span></span></p>
     </div>
+    <br>
     <center>
         <form>
             <input type="radio" name="tipo" value="128" id="uno" onclick="lenghtPassword()"><span id="suno">128</span>
-            <input type="text" placeholder="Password (16)" id="password1" maxlength="16" onkeypress="return check(event)">
+            <input type="text" value="" class="bgtxt" placeholder="Password (16)" id="password1" maxlength="16" onkeypress="return check(event)">
 
             <input type="radio" name="tipo" value="192" id="dos" onclick= "lenghtPassword()"><span id="sdos">192</span>
-            <input type="text" placeholder="Password (24)" id="password2" maxlength="24" onkeypress="return check(event)">
+            <input type="text" value="" class="bgtxt2" placeholder="Password (24)" id="password2" maxlength="24" onkeypress="return check(event) ">
 
             <input type="radio" name="tipo" value="256" id="tres" onclick= "lenghtPassword()"><span id="stres">256</span>
-            <input type="text" placeholder="Password (32)" id="password3" maxlength="32" onkeypress="return check(event)">
+            <input type="text" value="" class="bgtxt3" placeholder="Password (32)" id="password3" maxlength="32" onkeypress="return check(event)">
             
         </form>
-    </center>
+    
     
     <input type="file"  id="archivo">
     <br>
     <br>
     <br>
         <textarea  cols="30" rows="10" id="mdescifrado" placeholder="Mensaje descifrado"></textarea>
+        <br><br>
 
-            <input type="button" value="Descifrar" onclick="descifrar()" id="desc">
+            <input type="button" value="Descifrar" onclick="descifrar()" id="desc" class="btn purple">
             <a href="./index.html">Cifrar</a>
-
+        </center>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="./js/aes.js" ></script>
     <script>

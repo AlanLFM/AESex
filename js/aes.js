@@ -38,12 +38,36 @@ function guardarArchivoCifrado(){
 
     var texto = document.getElementById("texto").value;
     var i=1;
+    /*
+    password=document.getElementById("password"+i).value;
+      if(password!=" ")
+      {
+        console.log(password)
+      }  
+      else if(password!= " "){
+        i++
+        console.log(i)
+        password=document.getElementById("password"+i).value
+        console.log("Contraseña en dos" + password)
+      }else if(password==password){
+        i++
+        console.log(i)
+        password=document.getElementById("password"+i).value
+        console.log(password)
+      }else{
+        console.log("No hay contraseña")
+      }
+      */
+      
     do{
+      console.log("i: "+i)
       var password = document.getElementById("password"+i).value; 
       i++
-    }while(password==null)
+      console.log("Contraseña: " + password)
+
+    }while(password=="")
     
-    console.log(password)   
+    console.log("Contraseña fuera de: " + password)   
     var textoCifrado = CryptoJS.AES.encrypt(texto, password).toString();
 
     var textcBlob = new Blob([textoCifrado], {type:'text/plain'});
@@ -82,14 +106,16 @@ function descifrar(evento){
   reader.readAsText(archivo2.files[0]);
   reader.onload=function()
   {
-    var i=1;
 
+    var i=1;
     do{
-      var contra = document.getElementById("password"+i).value; 
+      var password = document.getElementById("password"+i).value; 
       i++
-    }while(contra==null)
+      console.log("Contraseña: "+ password)
+
+    }while(password=="")
     
-    console.log(contra)
+    console.log("Contraseña fuera de: " + password)
 
     //if(archivo2){
       //var reader=new FileReader();
@@ -101,11 +127,12 @@ function descifrar(evento){
         //document.getElementById("mensajedescifrado").innerHTML=contenido;
         //var descifrado2= CryptoJS.AES.decrypt("dsadsad", "1234567812345678")
         //console.log(descifrado2)
-        var descifrado = CryptoJS.AES.decrypt(contenido, contra);
+        var descifrado = CryptoJS.AES.decrypt(contenido, password);
         console.log("Esto es el descifrado: " + descifrado.toString(CryptoJS.enc.Utf8) + "jeje");
         var decifradotxt=descifrado.toString(CryptoJS.enc.Utf8)
         console.log("Esto es el decifrado txt " + decifradotxt)
         document.getElementById("mdescifrado").innerHTML = decifradotxt;
+
         
   }
 }

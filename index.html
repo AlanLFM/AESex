@@ -15,24 +15,25 @@
         <center>
         <form>
             <input type="radio" name="tipo" value="128" id="uno" onclick="lenghtPassword()"><span id="suno">128</span>
-            <input type="text" placeholder="Password (16)" id="password1" maxlength="16" onkeypress="return check(event)">
+            <input type="text" value="" class="bgtxt" placeholder="Password (16)" id="password1" maxlength="16" onkeypress="return check(event)">
 
             <input type="radio" name="tipo" value="192" id="dos" onclick= "lenghtPassword()"><span id="sdos">192</span>
-            <input type="text" placeholder="Password (24)" id="password2" maxlength="24" onkeypress="return check(event)">
+            <input type="text" value="" class="bgtxt2" placeholder="Password (24)" id="password2" maxlength="24" onkeypress="return check(event)">
 
             <input type="radio" name="tipo" value="256" id="tres" onclick= "lenghtPassword()"><span id="stres">256</span>
-            <input type="text" placeholder="Password (32)" id="password3" maxlength="32" onkeypress="return check(event)">
+            <input type="text" value="" class="bgtxt3" placeholder="Password (32)" id="password3" maxlength="32" onkeypress="return check(event)">
             
         </form>
         
-    </center>
     <br>
         <textarea  cols="30" rows="10" id="texto" placeholder="texto"></textarea>
-            <input type="button" value="Cifrar" onclick="guardarArchivoCifrado()" id="archivoc">
+        <br><br>
+            <input type="button" value="Cifrar" onclick="guardarArchivoCifrado()" id="archivoc" class="btn blue">
         
             <a href="./descifrado.html">Descifrar</a>
         
 
+        </center>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
     <script src="./js/aes.js" ></script>
